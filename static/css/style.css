@@ -12,6 +12,7 @@
 
   --font-label: "IBM Plex Sans Condensed", sans-serif;
   --font-data: "IBM Plex Mono", monospace;
+  /* Updated: 2026-09-01 Dynamic LED indicators */
 }
 
 * { box-sizing: border-box; }
