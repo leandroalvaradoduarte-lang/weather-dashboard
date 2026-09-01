@@ -25,6 +25,10 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 app = Flask(__name__)
 
+# Disable template caching for live updates
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.jinja_env.cache = None
+
 # ---------------------------------------------------------------------------
 # Umbrales de alerta (igual que en el firmware del ESP32)
 # ---------------------------------------------------------------------------
