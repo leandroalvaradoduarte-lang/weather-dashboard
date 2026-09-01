@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "echo 'Updated: 2026-09-01 15:07 - LED indicators'",
+  "buildCommand": "echo 'Build: LED indicators included' && find . -type f -name '*.html'",
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
     }
   ],
   "routes": [
