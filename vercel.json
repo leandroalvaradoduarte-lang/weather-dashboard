@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "echo 'Updated: 2026-09-01 15:07 - LED indicators'",
   "builds": [
     {
       "src": "api/index.py",
