@@ -17,6 +17,7 @@ import sqlite3
 import os
 from datetime import datetime, timedelta
 from flask import Flask, request, jsonify, render_template, g
+# LED indicators active - dynamic weather dashboard with real-time updates 2026
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "station.db")
