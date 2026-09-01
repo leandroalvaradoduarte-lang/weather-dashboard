@@ -134,12 +134,14 @@ def calcular_alerta(db, pressure_hpa):
 @app.route("/")
 def index():
     from flask import Response
-    # Build: 2026-09-01 15:05 - LED indicators active
+    # Build: 2026-09-01 16:21 - Force Vercel CDN cache bypass
     html = render_template("index.html")
     resp = Response(html, mimetype='text/html')
-    resp.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
+    resp.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0, public'
     resp.headers['Pragma'] = 'no-cache'
     resp.headers['Expires'] = '0'
+    resp.headers['Surrogate-Control'] = 'no-store'
+    resp.headers['X-Accel-Expires'] = '0'
     return resp
 
 
