@@ -24,12 +24,29 @@
   </header>
 
   <section class="hero">
+    <!-- LED Status Lights -->
+    <div class="led-status">
+      <div class="led-indicator">
+        <div class="led" id="ledRojo"></div>
+        <span class="led-label">Alerta</span>
+      </div>
+      <div class="led-indicator">
+        <div class="led" id="ledAmarillo"></div>
+        <span class="led-label">Precaución</span>
+      </div>
+      <div class="led-indicator">
+        <div class="led" id="ledVerde"></div>
+        <span class="led-label">Estable</span>
+      </div>
+    </div>
+
     <div class="gauge-card">
       <svg id="gaugeSvg" viewBox="0 0 320 200" class="gauge">
-        <!-- arco de fondo con zonas de color, 900–1100 hPa -->
+        <!-- arco de fondo con zonas de color: rojo (alerta), amarillo (precaución), verde (estable) -->
         <path d="M 30 170 A 130 130 0 0 1 290 170" class="gauge__track gauge__track--stable"/>
-        <path d="M 30 170 A 130 130 0 0 1 88 55" class="gauge__zone gauge__zone--low"/>
-        <path d="M 232 55 A 130 130 0 0 1 290 170" class="gauge__zone gauge__zone--high"/>
+        <path d="M 30 170 A 130 130 0 0 1 88 55" class="gauge__zone gauge__zone--alerta"/>
+        <path d="M 88 55 A 130 130 0 0 1 160 40" class="gauge__zone gauge__zone--precaucion"/>
+        <path d="M 160 40 A 130 130 0 0 1 290 170" class="gauge__zone gauge__zone--estable"/>
 
         <g id="ticks"></g>
 
@@ -93,7 +110,7 @@
 
   <footer class="foot">
     <span>Umbral de precaución: Δ≥0.5 hPa/h · Umbral de alerta: Δ≥1.5 hPa o 4 hPa acumulado en 3h</span>
-    <span>Actualiza automáticamente cada 5 s</span>
+    <span>Actualiza automáticamente cada 60 s</span>
   </footer>
 
 </div>

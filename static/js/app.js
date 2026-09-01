@@ -56,6 +56,25 @@ function setStatus(level) {
   const key = level || "sin-datos";
   badge.dataset.level = key;
   text.textContent = labels[key] || "Sin datos";
+
+  // Update LED indicators
+  const ledRojo = document.getElementById("ledRojo");
+  const ledAmarillo = document.getElementById("ledAmarillo");
+  const ledVerde = document.getElementById("ledVerde");
+
+  // Remove all active states
+  ledRojo.classList.remove("active");
+  ledAmarillo.classList.remove("active");
+  ledVerde.classList.remove("active");
+
+  // Activate appropriate LED based on alert level
+  if (key === "alerta") {
+    ledRojo.classList.add("active");
+  } else if (key === "precaucion") {
+    ledAmarillo.classList.add("active");
+  } else if (key === "estable") {
+    ledVerde.classList.add("active");
+  }
 }
 
 async function refreshLatest() {
