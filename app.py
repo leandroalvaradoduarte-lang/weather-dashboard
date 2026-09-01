@@ -138,8 +138,14 @@ def calcular_alerta(db, pressure_hpa):
 @app.route("/")
 def index():
     from flask import Response
-    # Build: 2026-09-01 16:21 - Force Vercel CDN cache bypass
-    html = render_template("index.html")
+    # Read HTML file directly from disk every time - force no cache
+    html_path = os.path.join(BASE_DIR, "templates", "index.html")
+    try:
+        with open(html_path, 'r', encoding='utf-8') as f:
+            html = f.read()
+    except:
+        html = render_template("index.html")
+    
     resp = Response(html, mimetype='text/html')
     resp.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0, public'
     resp.headers['Pragma'] = 'no-cache'
