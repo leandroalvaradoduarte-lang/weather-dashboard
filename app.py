@@ -133,7 +133,13 @@ def calcular_alerta(db, pressure_hpa):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    from flask import Response
+    html = render_template("index.html")
+    resp = Response(html, mimetype='text/html')
+    resp.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
+    resp.headers['Pragma'] = 'no-cache'
+    resp.headers['Expires'] = '0'
+    return resp
 
 
 @app.route("/api/reading", methods=["POST"])
