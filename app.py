@@ -134,6 +134,7 @@ def calcular_alerta(db, pressure_hpa):
 @app.route("/")
 def index():
     from flask import Response
+    # Build: 2026-09-01 15:05 - LED indicators active
     html = render_template("index.html")
     resp = Response(html, mimetype='text/html')
     resp.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'

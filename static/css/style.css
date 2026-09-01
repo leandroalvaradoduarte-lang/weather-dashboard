@@ -19,7 +19,8 @@
 
 body {
   margin: 0;
-  background: radial-gradient(ellipse at top, #0F1E2E 0%, var(--bg) 55%);
+  background: radial-gradient(ellipse at top, #1A4D2E 0%, #0B1420 55%);
+  /* TEST: Changed background to verify deployment - Sep 01 */
   color: var(--text);
   font-family: var(--font-label);
   min-height: 100vh;

@@ -253,6 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRangeTabs();
   loadHistory(currentRange());
 
-  setInterval(refreshLatest, 5000);
-  setInterval(() => loadHistory(currentRange()), 30000);
+  setInterval(refreshLatest, 60000); // Refresh every 1 minute
+  setInterval(() => loadHistory(currentRange()), 60000); // Update history every 1 minute
 });
